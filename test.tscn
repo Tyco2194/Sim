@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Creature.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.6707, 10 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 700, 20, 2 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 528, 322 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+scale = Vector2( 30, 1 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
+mesh = SubResource( 2 )
+
+[node name="Fucker1" type="RigidBody2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fucker1"]
+position = Vector2( -17.4614, -30.1606 )
+shape = SubResource( 3 )
+
+[node name="fucker2" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fucker2"]
+position = Vector2( 16.9271, -32.0724 )
+shape = SubResource( 4 )
